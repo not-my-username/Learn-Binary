@@ -30,8 +30,16 @@ function click () {
             $("#title").text("Learn Binary")
             $("#info").html(`Click the button below to start. The test will use values: <input type='number' id='length' min='2' value='${length}' style='width:40px; background: none;border: none;color: white;''> bits long<br> And Will run: <input type='number' id='timesToRun' min='2' value='${testsToRun}' style='width:40px; background: none;border: none;color: white;'> Times`)
             $("#mainButton").text("Start!")
-            incorrectAnswers, score, testsRan = 0
+            incorrectAnswers = []
+            score = []
+            testsRan = 0
             state=1
+            $("#timesToRun").on("input", function(e) {
+                testsToRun = parseInt($("#timesToRun").val()) || 5
+            });
+            $("#length").on("input", function(e) {
+                length = parseInt($("#length").val()) || 5
+            });
             break;
         case 1:
             $("body").removeClass("bg-red")
@@ -82,15 +90,7 @@ $(document).ready(function() {
     $("#mainButton").on("click", function() {
         click()
     });
-    length = parseInt($("#length").val()) || 5
-    testsToRun = parseInt($("#timesToRun").val()) || 5
-    $("#timesToRun").on("input", function(e) {
-        testsToRun = parseInt($("#timesToRun").val()) || 5
-    });
-    $("#length").on("input", function(e) {
-        length = parseInt($("#length").val()) || 5
-    });
-    $("body").keyup(function(e) {
+        $("body").keyup(function(e) {
         if (e.which == 13) {
             click()
         }
