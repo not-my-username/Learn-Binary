@@ -53,7 +53,7 @@ function click () {
                 $("#title").text(parseInt(value, 2))
                 $("#info").html("<input type='text' class='form-control' id='Answer' placeholder='Binary Value'>")  
             }
-            $("#info").focus()
+            $("#Answer").focus()
             $("#mainButton").text("Submit!")
             $("#switchBox").hide()
             state = 2
