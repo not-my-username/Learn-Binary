@@ -74,7 +74,7 @@ function click () {
             } else {
                 $("body").addClass("bg-red")
                 $("#title").text("Incorrect")
-                if (type = 0) {
+                if (type == 0) {
                     incorrectAnswers.push(`Question ${testsRan}: ${value} = ${parseInt(value, 2)}. Your Answer: ${$("#Answer").val()}`)
                 }else{
                     incorrectAnswers.push(`Question ${testsRan}: ${parseInt(value, 2)} = ${value}. Your Answer: ${$("#Answer").val()}`)
